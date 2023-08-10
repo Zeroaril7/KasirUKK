@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MenuTitle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/admin_user"
+        android:icon="@drawable/ic_user"
+        />
+    <item
+        android:id="@+id/admin_menu"
+        android:icon="@drawable/ic_menu"
+        />
+    <item
+        android:id="@+id/admin_meja"
+        android:icon="@drawable/ic_table"
+        />
+</menu>

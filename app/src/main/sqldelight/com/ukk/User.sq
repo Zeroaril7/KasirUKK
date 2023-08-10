@@ -1,0 +1,39 @@
+CREATE TABLE user (
+    id_user INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    name_user TEXT NOT NULL,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL,
+    role TEXT NOT NULL
+);
+
+getUserById:
+SELECT *
+FROM user
+WHERE id_user = :id_user
+;
+
+getAllUser:
+SELECT *
+FROM user;
+
+insertUser:
+INSERT INTO user (
+name_user,
+username,
+password,
+role
+)
+VALUES (?,?,?,?);
+
+updateUser:
+UPDATE user SET
+name_user = :name_user,
+username = :username,
+password = :password,
+role = :role
+WHERE id_user = :id_user;
+
+deleteUser:
+DELETE FROM user
+WHERE id_user = :id_user;
+

@@ -1,0 +1,7 @@
+CREATE TABLE menu (
+    id_menu INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    name_menu TEXT NOT NULL,
+    jenis TEXT NOT NULL,
+    deskripsi TEXT,
+    harga INTEGER NOT NULL
+);
