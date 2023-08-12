@@ -1,4 +1,4 @@
-package com.example.kasirukk.feature.admin.ui.user.viewmodel
+package com.example.kasirukk.feature.admin.user.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,7 +14,7 @@ class AdminUserViewModel @Inject constructor
     (private val userDataSource: UserDataSource): ViewModel() {
 
     var users = userDataSource.getAllUsers()
-    var userDetails = MutableLiveData<User>()
+    private var userDetails = MutableLiveData<User>()
 
     init {
         users = userDataSource.getAllUsers()

@@ -1,10 +1,11 @@
 package com.example.kasirukk
 
-import androidx.appcompat.app.AppCompatActivity
+import  androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.kasirukk.databinding.ActivityAdminBinding
-import com.example.kasirukk.feature.admin.ui.user.fragment.AdminViewUserFragment
+import com.example.kasirukk.feature.admin.menu.fragment.AdminViewMenuFragment
+import com.example.kasirukk.feature.admin.user.fragment.AdminViewUserFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,12 +23,14 @@ class AdminActivity : AppCompatActivity() {
         bottomNavigationView = binding.bottomNavigationView
 
         val userFragment = AdminViewUserFragment()
+        val menuFragment = AdminViewMenuFragment()
 
         setCurrentFragment(userFragment)
 
         bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.admin_user->setCurrentFragment(userFragment)
+                R.id.admin_user-> setCurrentFragment(userFragment)
+                R.id.admin_menu->setCurrentFragment(menuFragment)
             }
             true
         }

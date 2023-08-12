@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="ContentDescription"
+    android:layout_marginBottom="@dimen/delapan">
+
+    <ImageView
+        android:id="@+id/card_menu_iv_bg"
+        style="@style/BaseCard"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/card_menu_tv_title"
+        style="@style/TextContentTitle"
+        android:layout_marginStart="@dimen/tiga_dua"
+        android:layout_marginTop="@dimen/delapan"
+        android:text="Es Teh"
+        app:layout_constraintStart_toStartOf="@+id/card_menu_iv_bg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/card_menu_tv_desc"
+        style="@style/TextContentDescription"
+        android:layout_marginStart="@dimen/tiga_dua"
+        android:text="Manis/Tawar, Anget/Dingin"
+        app:layout_constraintBottom_toTopOf="@+id/card_menu_tv_harga"
+        app:layout_constraintStart_toStartOf="@+id/card_menu_iv_bg"
+        app:layout_constraintTop_toBottomOf="@+id/card_menu_tv_title" />
+
+    <TextView
+        android:id="@+id/card_menu_tv_harga"
+        style="@style/TextContentTitle"
+        android:layout_marginStart="@dimen/tiga_dua"
+        android:layout_marginBottom="@dimen/delapan"
+        android:text="50.000"
+        app:layout_constraintBottom_toBottomOf="@+id/card_menu_iv_bg"
+        app:layout_constraintStart_toStartOf="@+id/card_menu_iv_bg" />
+
+
+    <ImageButton
+        android:id="@+id/card_menu_iv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_delete"
+        android:layout_marginEnd="@dimen/dua_empat"
+        app:layout_constraintBottom_toBottomOf="@+id/card_menu_iv_bg"
+        app:layout_constraintEnd_toEndOf="@+id/card_menu_iv_bg"
+        app:layout_constraintTop_toTopOf="@+id/card_menu_iv_bg" />
+
+    <ImageButton
+        android:id="@+id/card_menu_iv_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_update"
+        android:layout_marginEnd="@dimen/delapan"
+        app:layout_constraintBottom_toBottomOf="@+id/card_menu_iv_bg"
+        app:layout_constraintEnd_toStartOf="@+id/card_menu_iv_delete"
+        app:layout_constraintTop_toTopOf="@+id/card_menu_iv_bg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

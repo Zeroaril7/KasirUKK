@@ -1,7 +1,5 @@
-package com.example.kasirukk.feature.admin.ui.user.fragment
+package com.example.kasirukk.feature.admin.user.fragment
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,7 +12,7 @@ import androidx.fragment.app.viewModels
 import com.example.kasirukk.AdminActivity
 import com.example.kasirukk.R
 import com.example.kasirukk.databinding.FragmentAdminAddUserBinding
-import com.example.kasirukk.feature.admin.ui.user.viewmodel.AdminUserViewModel
+import com.example.kasirukk.feature.admin.user.viewmodel.AdminUserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,7 +24,7 @@ class AdminAddUserFragment : Fragment() {
     private var _binding: FragmentAdminAddUserBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel : AdminUserViewModel by viewModels()
+    private val viewModel by viewModels<AdminUserViewModel>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -76,7 +74,6 @@ class AdminAddUserFragment : Fragment() {
                     CoroutineScope(Dispatchers.Main).launch {
                         viewModel.insertUser(name_user = name, username = username, password = password, role = role)
                         setCurrentFragment.setCurrentFragment(AdminViewUserFragment())
-                        onDestroyView()
                     }
                 }
             }

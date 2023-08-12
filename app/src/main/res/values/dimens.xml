@@ -2,6 +2,8 @@
 <resources>
     <dimen name="delapan">8dp</dimen>
     <dimen name="enam_belas">16dp</dimen>
+    <dimen name="delapan_belas">18dp</dimen>
+    <dimen name="dua_puluh">20dp</dimen>
     <dimen name="dua_empat">24dp</dimen>
     <dimen name="tiga_dua">32dp</dimen>
     <dimen name="empat_puluh">40dp</dimen>
@@ -12,6 +14,7 @@
 
 
     <dimen name="text_delapan">8sp</dimen>
+    <dimen name="text_dua_belas">12sp</dimen>
     <dimen name="text_enam_belas">16sp</dimen>
     <dimen name="text_dua_puluh">20sp</dimen>
     <dimen name="text_dua_empat">24sp</dimen>

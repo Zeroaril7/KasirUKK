@@ -3,8 +3,10 @@ package com.example.ukkkasir.di
 import android.app.Application
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.android.AndroidSqliteDriver
+import com.example.kasirukk.data.menu.MenuDataSource
+import com.example.kasirukk.data.menu.MenuDataSourceImpl
 import com.example.ukkkasir.data.user.UserDataSource
-import com.example.ukkkasir.data.user.UserDataSourceImpl
+import com.example.kasirukk.data.user.UserDataSourceImpl
 import com.ukk.Database
 import dagger.Module
 import dagger.Provides
@@ -30,5 +32,11 @@ object AppModule {
     @Singleton
     fun providesUserDataSource(driver: SqlDriver): UserDataSource {
         return UserDataSourceImpl(Database(driver))
+    }
+
+    @Provides
+    @Singleton
+    fun providesMenuDataSource(driver: SqlDriver): MenuDataSource {
+        return MenuDataSourceImpl(Database(driver))
     }
 }

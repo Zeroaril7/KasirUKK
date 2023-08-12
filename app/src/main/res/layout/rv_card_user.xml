@@ -19,7 +19,7 @@
         android:id="@+id/card_user_tv_title"
         style="@style/TextContentTitle"
         android:layout_marginStart="@dimen/tiga_dua"
-        android:layout_marginTop="@dimen/dua_empat"
+        android:layout_marginTop="@dimen/dua_puluh"
         android:text="Budi"
         app:layout_constraintStart_toStartOf="@+id/card_user_iv_bg"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,11 +27,12 @@
     <TextView
         android:id="@+id/card_user_tv_desc"
         style="@style/TextContentDescription"
-        android:layout_marginBottom="@dimen/dua_empat"
-        android:text="Jobdesk"
         android:layout_marginStart="@dimen/tiga_dua"
+        android:text="Jobdesk"
+        android:layout_marginBottom="@dimen/dua_puluh"
+        app:layout_constraintBottom_toBottomOf="@+id/card_user_iv_bg"
         app:layout_constraintStart_toStartOf="@+id/card_user_iv_bg"
-        app:layout_constraintTop_toBottomOf="@+id/card_user_tv_title" />
+         />
 
     <ImageButton
         android:id="@+id/card_user_iv_delete"

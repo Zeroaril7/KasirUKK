@@ -5,7 +5,18 @@
     android:id="@+id/admin_user"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.admin.ui.user.fragment.AdminViewUserFragment">
+    tools:context=".feature.admin.user.fragment.AdminViewUserFragment">
+
+
+    <TextView
+        android:id="@+id/fragment_admin_view_user_tv_user"
+        style="@style/TextSubHead"
+        android:layout_marginStart="@dimen/dua_empat"
+        android:text="Welcome, Budi"
+        android:layout_marginTop="@dimen/tiga_dua"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fragment_admin_view_user_tv_role"
@@ -19,15 +30,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_admin_view_user_tv_user" />
 
-    <TextView
-        android:id="@+id/fragment_admin_view_user_tv_user"
-        style="@style/TextSubHead"
-        android:layout_marginStart="@dimen/dua_empat"
-        android:text="Welcome, Budi"
-        android:layout_marginTop="@dimen/tiga_dua"
-        android:textColor="@color/gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.recyclerview.widget.RecyclerView

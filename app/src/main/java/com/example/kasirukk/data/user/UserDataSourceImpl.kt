@@ -1,7 +1,8 @@
-package com.example.ukkkasir.data.user
+package com.example.kasirukk.data.user
 
 import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToList
+import com.example.ukkkasir.data.user.UserDataSource
 import com.ukk.Database
 import com.ukk.User
 import kotlinx.coroutines.Dispatchers
