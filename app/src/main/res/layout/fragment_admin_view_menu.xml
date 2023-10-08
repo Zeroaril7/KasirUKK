@@ -30,10 +30,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_admin_view_user_tv_user" />
 
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_logout"
+        android:layout_marginTop="@dimen/lima_enam"
+        android:layout_marginEnd="@dimen/dua_empat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/fragment_admin_view_menu_tv_makanan"
         style="@style/TextSubHead"
-        android:layout_marginTop="@dimen/dua_puluh"
+        android:layout_marginTop="@dimen/dua_empat"
         android:layout_marginStart="@dimen/dua_empat"
         android:text="@string/makanan"
         android:textColor="@color/gray"

@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kasirukk.databinding.RvCardMenuBinding
 import com.example.kasirukk.feature.admin.menu.viewmodel.AdminMenuViewModel
-import com.ukk.Menu
-import com.ukk.User
+import com.ukk.data.Menu
 
 
 class AdminMenuMakananAdapter(private val listener: ClickListener, private val menuViewModel: AdminMenuViewModel): ListAdapter<Menu, AdminMenuMakananAdapter.ViewHolder>(
@@ -43,9 +42,9 @@ class AdminMenuMakananAdapter(private val listener: ClickListener, private val m
         fun bind(menu: Menu?, listener: ClickListener){
             binding.cardMenuTvTitle.text = menu?.name_menu
             binding.cardMenuTvDesc.text = menu?.description
-            binding.cardMenuTvHarga.text = menu?.price.toString()
+            binding.cardMenuTvHarga.text = "Rp. " + menu?.price.toString()
             binding.cardMenuIvDelete.setOnClickListener {
-                listener.onDeleteMakananItemClicked(menu!!)
+                menuViewModel.deleteMenu(menu!!.id_menu)
             }
             binding.cardMenuIvUpdate.setOnClickListener {
                 listener.onUpdateMakananItemClicked(menu!!)
@@ -66,6 +65,5 @@ class AdminMenuMakananAdapter(private val listener: ClickListener, private val m
 
     interface ClickListener {
         fun onUpdateMakananItemClicked(item: Menu)
-        fun onDeleteMakananItemClicked(item: Menu)
     }
 }

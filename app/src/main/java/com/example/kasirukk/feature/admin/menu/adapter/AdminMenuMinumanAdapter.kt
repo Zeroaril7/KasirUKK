@@ -1,5 +1,6 @@
 package com.example.kasirukk.feature.admin.menu.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -7,8 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kasirukk.databinding.RvCardMenuBinding
 import com.example.kasirukk.feature.admin.menu.viewmodel.AdminMenuViewModel
-import com.ukk.Menu
-import com.ukk.User
+import com.ukk.data.Menu
 
 
 class AdminMenuMinumanAdapter(private val listener: ClickListener, private val menuViewModel: AdminMenuViewModel): ListAdapter<Menu, AdminMenuMinumanAdapter.ViewHolder>(
@@ -44,9 +44,9 @@ class AdminMenuMinumanAdapter(private val listener: ClickListener, private val m
         fun bind(menu: Menu?, listener: ClickListener) {
             binding.cardMenuTvTitle.text = menu?.name_menu
             binding.cardMenuTvDesc.text = menu?.description
-            binding.cardMenuTvHarga.text = menu?.price.toString()
+            binding.cardMenuTvHarga.text = "Rp. " + menu?.price.toString()
             binding.cardMenuIvDelete.setOnClickListener {
-                listener.onDeleteMinumanItemClicked(menu!!)
+                menuViewModel.deleteMenu(menu!!.id_menu)
             }
             binding.cardMenuIvUpdate.setOnClickListener {
                 listener.onUpdateMinumanItemClicked(menu!!)
@@ -69,6 +69,5 @@ class AdminMenuMinumanAdapter(private val listener: ClickListener, private val m
 
     interface ClickListener {
         fun onUpdateMinumanItemClicked(item: Menu)
-        fun onDeleteMinumanItemClicked(item: Menu)
     }
 }

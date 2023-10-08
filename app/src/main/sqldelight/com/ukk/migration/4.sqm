@@ -1,0 +1,21 @@
+import java.time.LocalDateTime;
+import kotlin.collections.List;
+
+DROP TABLE IF EXISTS transaksi;
+
+CREATE TABLE transaksi (
+    id_transaksi INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    createdAt INTEGER AS LocalDateTime NOT NULL,
+    id_user INTEGER NOT NULL,
+    id_meja INTEGER NOT NULL UNIQUE,
+    id_menu INTEGER AS List<Long> NOT NULL,
+    amount INTEGER AS List<Long> NOT NULL,
+    bill INTEGER NOT NULL,
+    buyer_name TEXT NOT NULL,
+    note TEXT,
+    is_paid INTEGER AS Boolean NOT NULL DEFAULT 0,
+    FOREIGN KEY(id_user) REFERENCES user (id_user)
+    ON DELETE CASCADE,
+    FOREIGN KEY(id_meja) REFERENCES meja (id_meja)
+    ON DELETE CASCADE
+);

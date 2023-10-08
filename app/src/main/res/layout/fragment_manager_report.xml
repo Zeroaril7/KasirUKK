@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.manager.report.fragment.ManagerReportFragment">
+
+    <TextView
+        android:id="@+id/fragment_manager_report_tv_user"
+        style="@style/TextSubHead"
+        android:text="Welcome, Budi"
+        android:textColor="@color/gray"
+        android:layout_marginTop="@dimen/tiga_dua"
+        android:layout_marginStart="@dimen/dua_empat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_manager_report_tv_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/management"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_enam_belas"
+        android:layout_marginStart="@dimen/dua_empat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_manager_report_tv_user" />
+
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_logout"
+        android:layout_marginTop="@dimen/lima_enam"
+        android:layout_marginEnd="@dimen/dua_empat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_manager_report_tv"
+        style="@style/TextSubHead"
+        android:layout_marginStart="@dimen/dua_empat"
+        android:text="@string/report"
+        android:textColor="@color/gray"
+        android:layout_marginTop="@dimen/dua_empat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_manager_report_tv_role" />
+
+    <ImageView
+        android:id="@+id/fragment_manager_report_iv_filter_bg"
+        android:layout_width="match_parent"
+        android:background="@drawable/card_background"
+        style="@style/BaseUI"
+        android:layout_marginTop="@dimen/dua_empat"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_manager_report_tv" />
+
+    <ImageView
+        android:id="@+id/fragment_manager_report_iv_filter_ic_user"
+        android:layout_width="@dimen/dua_puluh"
+        android:layout_height="@dimen/dua_empat"
+        android:background="@drawable/ic_profile"
+        android:layout_marginStart="@dimen/enam_belas"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_manager_report_iv_filter_bg"
+        app:layout_constraintStart_toStartOf="@+id/fragment_manager_report_iv_filter_bg"
+        app:layout_constraintTop_toTopOf="@+id/fragment_manager_report_iv_filter_bg" />
+
+    <ImageView
+        android:id="@+id/fragment_manager_report_iv_filter_bg_user"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="@dimen/delapan"
+        android:background="@drawable/card_background_filter"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_manager_report_iv_filter_bg"
+        app:layout_constraintStart_toEndOf="@+id/fragment_manager_report_iv_filter_ic_user"
+        app:layout_constraintTop_toTopOf="@+id/fragment_manager_report_iv_filter_bg" />
+
+    <Spinner
+        android:id="@+id/fragment_manager_report_sp_filter_user"
+        android:layout_width="120dp"
+        android:layout_marginStart="@dimen/lima_enam"
+        style="@style/TextContentDescription"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_manager_report_iv_filter_bg_user"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_manager_report_iv_filter_bg_user"
+        app:layout_constraintStart_toStartOf="@+id/fragment_manager_report_iv_filter_bg_user"
+        app:layout_constraintTop_toTopOf="@+id/fragment_manager_report_iv_filter_bg_user" />
+
+    <ImageView
+        android:id="@+id/fragment_manager_report_iv_filter_ic_date"
+        android:layout_width="@dimen/dua_empat"
+        android:layout_height="@dimen/dua_empat"
+        android:background="@drawable/ic_date"
+        android:layout_marginStart="@dimen/enam_belas"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_manager_report_iv_filter_bg"
+        app:layout_constraintStart_toEndOf="@+id/fragment_manager_report_iv_filter_bg_user"
+        app:layout_constraintTop_toTopOf="@+id/fragment_manager_report_iv_filter_bg" />
+
+    <ImageView
+        android:id="@+id/fragment_manager_report_iv_filter_bg_date"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="@dimen/delapan"
+        android:clickable="true"
+        android:background="@drawable/card_background_filter"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_manager_report_iv_filter_bg"
+        app:layout_constraintStart_toEndOf="@+id/fragment_manager_report_iv_filter_ic_date"
+        app:layout_constraintTop_toTopOf="@+id/fragment_manager_report_iv_filter_bg" />
+
+    <TextView
+        android:id="@+id/fragment_manager_report_tv_filter_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="11/02/2023"
+        android:layout_marginTop="@dimen/dua"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_sepuluh"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_manager_report_iv_filter_bg_date"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_manager_report_iv_filter_bg_date"
+        app:layout_constraintStart_toStartOf="@+id/fragment_manager_report_iv_filter_bg_date"
+        app:layout_constraintTop_toTopOf="@+id/fragment_manager_report_iv_filter_bg_date" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_manager_report_layout_daily"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="@dimen/enam_belas"
+        android:background="@drawable/card_background_filter"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_manager_report_iv_filter_bg"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_manager_report_iv_filter_bg"
+        app:layout_constraintTop_toTopOf="@+id/fragment_manager_report_iv_filter_bg"
+        >
+
+        <Spinner
+            android:id="@+id/fragment_manager_report_sp_filter_date"
+            style="@style/TextContentDescription"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginStart="@dimen/delapan"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_manager_report_layout_daily"
+            app:layout_constraintStart_toStartOf="@+id/fragment_manager_report_layout_daily"
+            app:layout_constraintTop_toTopOf="@+id/fragment_manager_report_layout_daily" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fragment_manager_report_btn_search"
+        style="@style/BaseUI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_background"
+        android:layout_marginTop="@dimen/empat"
+        android:text="Search"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_manager_report_iv_filter_bg" />
+
+    <ImageView
+        android:id="@+id/fragment_manager_report_iv_return_bg"
+        style="@style/BaseUI"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/empat_puluh"
+        android:layout_marginTop="@dimen/enam_belas"
+        android:background="@drawable/card_background_complete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_manager_report_btn_search" />
+
+    <TextView
+        android:id="@+id/fragment_manager_report_tv_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Return: Rp. 3.000.000"
+        android:textColor="@color/complete_text"
+        android:textSize="@dimen/text_enam_belas"
+        android:layout_marginStart="@dimen/dua_empat"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_manager_report_iv_return_bg"
+        app:layout_constraintStart_toStartOf="@+id/fragment_manager_report_iv_return_bg"
+        app:layout_constraintTop_toTopOf="@+id/fragment_manager_report_iv_return_bg" />
+
+    <ScrollView
+        android:id="@+id/fragment_manager_report_sv_rv"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginTop="@dimen/dua_puluh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_manager_report_iv_return_bg">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_manager_report_rv"
+            style="@style/BaseUI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/delapan"
+            tools:listitem="@layout/rv_card_transaction" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

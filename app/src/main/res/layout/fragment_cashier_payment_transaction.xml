@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:id="@+id/fragment_cashier_payment_transaction_sv_page"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/enam_belas"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    style="@style/BaseUI"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".feature.cashier.transaction.fragment.CashierPaymentTransactionFragment">
+
+    <ImageButton
+        android:id="@+id/fragment_cashier_payment_transaction_ib_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_back"
+        android:backgroundTint="@color/secondary"
+        android:layout_marginTop="@dimen/empat_dua"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/fragment_cashier_payment_transaction_tv_title"
+        style="@style/TextFormTitle"
+        android:text="Order#1"
+        android:layout_marginTop="@dimen/empat_puluh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/fragment_cashier_payment_transaction_ib_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_update"
+        android:backgroundTint="@color/secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/empat_puluh"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_cashier_payment_transaction_tv_buyer"
+        android:layout_width="160dp"
+        android:layout_height="30dp"
+        android:background="@drawable/card_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Budi"
+        android:layout_marginTop="@dimen/tiga_dua"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_enam_belas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_tv_title" />
+
+    <TextView
+        android:id="@+id/fragment_cashier_payment_transaction_tv_table"
+        android:layout_width="160dp"
+        android:layout_height="30dp"
+        android:background="@drawable/card_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Meja 1"
+        android:layout_marginTop="@dimen/tiga_dua"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_enam_belas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_tv_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_cashier_payment_transaction_rv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dua_empat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_tv_buyer"
+        tools:imeOptions="actionNone"
+        />
+
+    <ImageView
+        android:id="@+id/fragment_cashier_payment_transaction_iv_note"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/dua_puluh"
+        android:background="@drawable/card_background_gray_rounded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_rv_menu" />
+
+    <TextView
+        android:id="@+id/fragment_cashier_payment_transaction_tv_note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/note"
+        android:textSize="@dimen/text_enam_belas"
+        android:layout_marginTop="@dimen/dua"
+        android:layout_marginBottom="@dimen/dua"
+        style="@style/BaseUI"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_cashier_payment_transaction_iv_line_note"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_cashier_payment_transaction_iv_note"
+        app:layout_constraintStart_toStartOf="@+id/fragment_cashier_payment_transaction_iv_note"
+        app:layout_constraintTop_toTopOf="@+id/fragment_cashier_payment_transaction_iv_note" />
+
+    <TextView
+        android:id="@+id/fragment_cashier_payment_transaction_tv_note_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BaseUI"
+        android:layout_marginTop="@dimen/delapan"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Kuahnya jangan banyak banyak"
+        android:textSize="@dimen/text_dua_belas"
+        android:maxLines="3"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_cashier_payment_transaction_iv_note"
+        app:layout_constraintStart_toStartOf="@+id/fragment_cashier_payment_transaction_iv_note"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_tv_note_title" />
+
+
+    <ImageView
+        android:id="@+id/fragment_cashier_payment_transaction_iv_line_note"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/tiga_dua"
+        android:layout_marginStart="@dimen/enam_belas"
+        android:layout_marginEnd="@dimen/enam_belas"
+        android:background="@drawable/line_white"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragment_cashier_payment_transaction_iv_note" />
+
+
+    <ImageView
+        android:id="@+id/fragment_cashier_payment_transaction_iv_bill_top"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="@dimen/dua_puluh"
+        android:background="@drawable/card_background_gray_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_iv_note" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_cashier_payment_transaction_rv_bill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_iv_bill_top"
+        tools:imeOptions="actionNone" />
+
+    <ImageView
+        android:id="@+id/fragment_cashier_payment_transaction_iv_bill_bg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:src="@drawable/card_background_gray_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_rv_bill" />
+
+    <ImageView
+        android:id="@+id/fragment_cashier_payment_transaction_iv_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/line_white"
+        android:visibility="visible"
+        android:layout_marginStart="@dimen/enam_belas"
+        android:layout_marginEnd="@dimen/enam_belas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_rv_bill" />
+
+    <TextView
+        android:id="@+id/fragment_cashier_payment_transaction_tv_total"
+        style="@style/TextContentTitle"
+        android:text="@string/total"
+        android:textColor="@color/secondary"
+        android:layout_marginEnd="@dimen/dua_empat"
+        android:layout_marginStart="@dimen/dua_empat"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_cashier_payment_transaction_iv_bill_bg"
+        app:layout_constraintStart_toStartOf="@+id/fragment_cashier_payment_transaction_iv_bill_bg"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_iv_line" />
+
+    <TextView
+        android:id="@+id/fragment_cashier_payment_transaction_tv_total_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Rp. 1200000"
+        android:layout_marginEnd="@dimen/dua_empat"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/text_dua_belas"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_cashier_payment_transaction_iv_bill_bg"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_cashier_payment_transaction_iv_bill_bg"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_iv_line" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fragment_cashier_payment_transaction_btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lima_enam"
+        android:layout_marginTop="@dimen/tiga_dua"
+        android:backgroundTint="@color/primary"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/finish_order"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_payment_transaction_iv_bill_bg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

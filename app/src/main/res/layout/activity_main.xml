@@ -4,15 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".feature.login.MainActivity"
+    style="@style/BaseUI"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <ImageView
+        android:id="@+id/activity_main_iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_marginStart="@dimen/tiga_dua"
+        android:layout_marginEnd="@dimen/tiga_dua"
+        android:background="@drawable/card_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/activity_main_tv_login_title"
+        style="@style/TextHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginTop="@dimen/dua_puluh"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_iv_bg"
+        app:layout_constraintStart_toStartOf="@+id/activity_main_iv_bg"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_iv_bg" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/activity_main_username"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/text_dua_belas"
+        android:layout_marginTop="@dimen/enam_belas"
+        android:paddingStart="@dimen/delapan"
+        android:paddingEnd="@dimen/delapan"
+        android:hint="@string/username"
+        android:background="@drawable/card_background_gray_rounded"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_iv_bg"
+        app:layout_constraintStart_toStartOf="@+id/activity_main_iv_bg"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_tv_login_title" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/activity_main_password"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/delapan"
+        android:paddingStart="@dimen/delapan"
+        android:paddingEnd="@dimen/delapan"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/text_dua_belas"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:background="@drawable/card_background_gray_rounded"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_username"
+        app:layout_constraintStart_toStartOf="@id/activity_main_iv_bg"
+        app:layout_constraintEnd_toEndOf="@id/activity_main_iv_bg"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/activity_main_btn_login"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/enam_belas"
+        android:text="@string/login"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/text_sepuluh"
+        android:background="@drawable/card_background_progress"
+        android:textColor="@color/progress_text"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_password"
+        app:layout_constraintStart_toStartOf="@id/activity_main_iv_bg"
+        app:layout_constraintEnd_toEndOf="@id/activity_main_iv_bg"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

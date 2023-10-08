@@ -1,0 +1,58 @@
+CREATE TABLE detail_transaksi (
+    id_transaksi INTEGER NOT NULL,
+    id_menu INTEGER NOT NULL,
+    amount INTEGER NOT NULL,
+    price INTEGER NOT NULL
+);
+
+getMenuDetailTransaksi:
+SELECT * FROM detail_transaksi
+WHERE id_transaksi = :id_transaksi
+AND id_menu = :id_menu
+;
+
+deleteDetailTransaksi:
+DELETE FROM detail_transaksi
+WHERE id_menu = :id_menu
+;
+
+insertDetailTransaksi:
+INSERT INTO detail_transaksi
+(id_transaksi, id_menu, amount, price) VALUES
+(?,?,?, ?);
+
+updateDetailTransaksi:
+UPDATE detail_transaksi SET
+amount = :amount, price = :price
+WHERE id_menu = :id_menu
+;
+
+getBill:
+SELECT SUM(price) AS bill
+FROM detail_transaksi
+WHERE
+id_transaksi = :id_transaksi
+;
+
+getDetailTransaksiById:
+SELECT
+id_transaksi,
+id_menu,
+SUM(amount) AS amount,
+price
+FROM detail_transaksi
+WHERE id_transaksi = :id_transaksi
+GROUP BY id_menu
+;
+
+getOrder:
+SELECT m.name_menu, d.price
+FROM detail_transaksi AS d
+INNER JOIN menu AS m
+ON d.id_menu = m.id_menu
+WHERE d.id_transaksi = :id_transaksi
+;
+
+
+
+

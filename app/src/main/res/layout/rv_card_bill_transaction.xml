@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="ContentDescription"
+    >
+
+    <ImageView
+        android:id="@+id/card_bill_transaction_iv_bg"
+        style="@style/BaseCardGray"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/card_bill_transaction_tv_menu"
+        style="@style/TextContentDescription"
+        android:text="@string/meja"
+        android:textColor="@color/gray_text"
+        android:layout_marginStart="@dimen/dua_empat"
+        app:layout_constraintBottom_toBottomOf="@+id/card_bill_transaction_iv_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/card_bill_transaction_tv_price"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Rp. 12000"
+        android:textSize="@dimen/text_dua_belas"
+        android:fontFamily = "@font/poppins_regular"
+        android:textColor="@color/gray_text"
+        android:layout_marginEnd="@dimen/dua_empat"
+        app:layout_constraintBottom_toBottomOf="@+id/card_bill_transaction_iv_bg"
+        app:layout_constraintEnd_toEndOf="@+id/card_bill_transaction_iv_bg"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

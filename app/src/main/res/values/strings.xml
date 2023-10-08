@@ -15,6 +15,22 @@
         <item>Management</item>
     </string-array>
 
+    <string-array name="spinner_daily">
+        <item>All</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
     <string-array name="spinner_menu">
         <item>Pilih</item>
         <item>Makanan</item>
@@ -30,4 +46,26 @@
     <string name="update_user">Update User</string>
     <string name="makanan">Makanan</string>
     <string name="minuman">Minuman</string>
+    <string name="description">Description</string>
+    <string name="price">Price</string>
+    <string name="update_menu">Update Menu</string>
+    <string name="type">Type</string>
+    <string name="add_menu">Add Menu</string>
+    <string name="no_meja">Nomor Meja</string>
+    <string name="add_meja">Add Meja</string>
+    <string name="transaction">Transaction</string>
+    <string name="on_going">On Going</string>
+    <string name="add_order">Add Order</string>
+    <string name="note">Note</string>
+    <string name="order">Order</string>
+    <string name="table">Table</string>
+    <string name="total">Total</string>
+    <string name="finish_order">Finish Order</string>
+    <string name="history">History</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="favorite_menu">Favorite Menu</string>
+    <string name="report">Report</string>
+    <string name="login">Login</string>
+    <string name="management">Management</string>
+    <string name="kasir">Cashier</string>
 </resources>

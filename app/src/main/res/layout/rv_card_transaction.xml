@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="ContentDescription"
+    android:layout_marginBottom="@dimen/delapan"
+    >
+
+    <ImageView
+        android:id="@+id/card_transaction_iv_bg"
+        style="@style/TransactionCard"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/card_trasaction_tv_date"
+        style="@style/TextContentDescription"
+        android:text="12 Januari 2023"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/delapan"
+        android:layout_marginStart="@dimen/tiga_dua"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/card_transaction_iv_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dua"
+        android:src="@drawable/line_white"
+        app:layout_constraintTop_toBottomOf="@+id/card_trasaction_tv_date"
+        app:layout_constraintStart_toStartOf="@+id/card_transaction_iv_bg"
+        />
+
+    <TextView
+        android:id="@+id/card_transaction_tv_buyer"
+        style="@style/TextContentTitle"
+        android:layout_marginStart="@dimen/tiga_dua"
+        android:layout_marginTop="@dimen/dua_puluh"
+        android:text="Budi"
+        app:layout_constraintStart_toStartOf="@+id/card_transaction_iv_bg"
+        app:layout_constraintTop_toBottomOf="@+id/card_transaction_iv_line" />
+
+    <TextView
+        android:id="@+id/card_transaction_tv_table"
+        style="@style/TextContentDescription"
+        android:layout_marginStart="@dimen/tiga_dua"
+        android:text="Meja 1"
+        android:layout_marginBottom="@dimen/dua_puluh"
+        app:layout_constraintBottom_toBottomOf="@+id/card_transaction_iv_bg"
+        app:layout_constraintStart_toStartOf="@+id/card_transaction_iv_bg"
+        />
+
+    <ImageView
+        android:id="@+id/card_transaction_iv_status_bg"
+        android:layout_width="103dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="@dimen/tiga_dua"
+        android:background="@drawable/card_background_progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/card_transaction_iv_bg"
+        app:layout_constraintTop_toBottomOf="@+id/card_transaction_iv_line" />
+
+    <TextView
+        android:id="@+id/card_transaction_tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/on_going"
+        android:textColor="@color/progress_text"
+        android:textSize="@dimen/text_sepuluh"
+        app:layout_constraintBottom_toBottomOf="@+id/card_transaction_iv_status_bg"
+        app:layout_constraintEnd_toEndOf="@+id/card_transaction_iv_status_bg"
+        app:layout_constraintStart_toStartOf="@+id/card_transaction_iv_status_bg"
+        app:layout_constraintTop_toTopOf="@+id/card_transaction_iv_status_bg" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

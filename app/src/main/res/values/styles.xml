@@ -75,8 +75,25 @@
         <item name="android:layout_height">92dp</item>
         <item name="android:background">@drawable/card_background</item>
     </style>
+    <style name="BaseCardGray">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:background">@drawable/card_background_gray</item>
+    </style>
+    <style name="TransactionCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">120dp</item>
+        <item name="android:background">@drawable/card_background</item>
+    </style>
 
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">?android:attr/colorFocusedHighlight</item>
+    </style>
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+    </style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:background">@drawable/ic_arrow</item>
     </style>
 </resources>

@@ -1,0 +1,28 @@
+import java.util.Date;
+import kotlin.collections.List;
+import kotlin.Boolean;
+
+DROP TABLE IF EXISTS transaksi;
+DROP TABLE IF EXISTS detail_transaksi;
+
+CREATE TABLE transaksi (
+    id_transaksi INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    date INTEGER AS Date NOT NULL ,
+    id_user INTEGER NOT NULL UNIQUE,
+    id_meja INTEGER NOT NULL UNIQUE,
+    id_menu INTEGER AS List<Long> NOT NULL,
+    amount INTEGER AS List<Long> NOT NULL,
+    bill INTEGER NOT NULL,
+    buyer_name TEXT NOT NULL,
+    note TEXT,
+    isPaid INTEGER AS Boolean NOT NULL DEFAULT 0,
+    FOREIGN KEY(id_user) REFERENCES user (id_user)
+    ON DELETE CASCADE,
+    FOREIGN KEY(id_meja) REFERENCES meja (id_meja)
+    ON DELETE CASCADE
+);
+
+CREATE TABLE favorite (
+    id_menu INTEGER NOT NULL,
+    amount INTEGER NOT NULL
+);

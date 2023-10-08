@@ -9,7 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import com.example.kasirukk.AdminActivity
+import com.example.kasirukk.feature.admin.AdminActivity
 import com.example.kasirukk.R
 import com.example.kasirukk.databinding.FragmentAdminAddUserBinding
 import com.example.kasirukk.feature.admin.user.viewmodel.AdminUserViewModel
@@ -37,7 +37,7 @@ class AdminAddUserFragment : Fragment() {
 
         binding.fragmentAdminAddUserIbBack.setOnClickListener {
             setCurrentFragment.setCurrentFragment(AdminViewUserFragment())
-            onDestroyView()
+            onDestroy()
         }
 
         ArrayAdapter.createFromResource(
@@ -66,8 +66,11 @@ class AdminAddUserFragment : Fragment() {
 
             when{
                 name.isEmpty() -> alert()
+                name == "" -> alert()
                 password.isEmpty() -> alert()
+                password == "" -> alert()
                 username.isEmpty() -> alert()
+                username == "" -> alert()
                 role == "Pilih" -> alert()
 
                 else -> {
@@ -82,13 +85,11 @@ class AdminAddUserFragment : Fragment() {
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDestroy() {
+        super.onDestroy()
         _binding = null
     }
-
     private fun alert(){
         Toast.makeText(requireContext(), "Enter The Right Value", Toast.LENGTH_SHORT).show()
     }
-
 }

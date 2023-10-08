@@ -1,0 +1,54 @@
+CREATE TABLE menu (
+    id_menu INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    name_menu TEXT NOT NULL,
+    type TEXT NOT NULL,
+    description TEXT,
+    price INTEGER NOT NULL
+);
+
+getMenuById:
+SELECT *
+FROM menu
+WHERE id_menu = :id_menu
+;
+
+getMenuByType:
+SELECT *
+FROM menu
+WHERE type = :type
+;
+
+getAllMenu:
+SELECT *
+FROM menu
+;
+
+insertMenu:
+INSERT INTO menu
+(
+name_menu,
+type,
+description,
+price
+)
+VALUES (?,?,?,?)
+;
+
+updateMenu:
+UPDATE menu SET
+name_menu = :name_menu,
+description = :description,
+price = :price
+WHERE id_menu = :id_menu;
+
+deleteMenu:
+DELETE FROM menu
+WHERE id_menu = :id_menu;
+
+getFavorite:
+SELECT m.name_menu, SUM(d.amount) AS sold
+FROM detail_transaksi d
+LEFT JOIN menu m
+ON d.id_menu = m.id_menu
+GROUP BY m.id_menu
+ORDER BY sold DESC;

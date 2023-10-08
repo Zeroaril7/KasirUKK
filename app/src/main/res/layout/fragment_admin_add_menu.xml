@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="LabelFor"
+    tools:context=".feature.admin.menu.fragment.AdminAddMenuFragment">
+
+    <ImageButton
+        android:id="@+id/fragment_admin_add_menu_ib_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_back"
+        android:backgroundTint="@color/secondary"
+        android:layout_marginTop="@dimen/empat_dua"
+        android:layout_marginStart="@dimen/dua_empat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/fragment_admin_add_menu_tv_title"
+        style="@style/TextFormTitle"
+        android:layout_marginTop="@dimen/empat_puluh"
+        android:text="@string/add_menu"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_admin_add_menu_tv_name"
+        style="@style/TextForm"
+        android:layout_marginTop="@dimen/empat_delapan"
+        android:text="@string/nama_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_admin_add_menu_ib_back" />
+
+    <EditText
+        android:id="@+id/fragment_admin_add_menu_et_name"
+        style="@style/TextFormInput"
+        android:inputType="text"
+        android:autofillHints=""
+        tools:imeOptions="actionNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_admin_add_menu_tv_name"
+        />
+
+    <TextView
+        android:id="@+id/fragment_admin_add_menu_tv_desc"
+        style="@style/TextForm"
+        android:text="@string/description"
+        android:layout_marginTop="@dimen/dua_empat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_admin_add_menu_et_name" />
+
+    <EditText
+        android:id="@+id/fragment_admin_add_menu_et_desc"
+        style="@style/TextFormInput"
+        android:autofillHints=""
+        android:inputType="text"
+        tools:imeOptions="actionNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_admin_add_menu_tv_desc"
+        />
+
+    <TextView
+        android:id="@+id/fragment_admin_add_menu_tv_type"
+        android:layout_marginTop="@dimen/dua_empat"
+        style="@style/TextForm"
+        android:text="@string/type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_admin_add_menu_et_desc" />
+
+    <Spinner
+        android:id="@+id/fragment_admin_add_user_sp_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dua_empat"
+        android:layout_marginEnd="@dimen/dua_empat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_admin_add_menu_tv_type" />
+
+
+    <TextView
+        android:id="@+id/fragment_admin_add_menu_tv_harga"
+        android:layout_marginTop="@dimen/tiga_dua"
+        style="@style/TextForm"
+        android:text="@string/price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_admin_add_user_sp_type" />
+
+    <EditText
+        android:id="@+id/fragment_admin_add_menu_et_harga"
+        style="@style/TextFormInput"
+        android:autofillHints=""
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_admin_add_menu_tv_harga"
+        tools:imeOptions="actionNext"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fragment_admin_add_menu_btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lima_enam"
+        android:layout_marginStart="@dimen/dua_empat"
+        android:layout_marginEnd="@dimen/dua_empat"
+        android:layout_marginTop="@dimen/tiga_dua"
+        android:backgroundTint="@color/primary"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_admin_add_menu_et_harga" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

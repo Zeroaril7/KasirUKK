@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="dua">2dp</dimen>
+    <dimen name="empat">4dp</dimen>
     <dimen name="delapan">8dp</dimen>
     <dimen name="enam_belas">16dp</dimen>
     <dimen name="delapan_belas">18dp</dimen>
@@ -14,6 +16,7 @@
 
 
     <dimen name="text_delapan">8sp</dimen>
+    <dimen name="text_sepuluh">10sp</dimen>
     <dimen name="text_dua_belas">12sp</dimen>
     <dimen name="text_enam_belas">16sp</dimen>
     <dimen name="text_dua_puluh">20sp</dimen>
@@ -22,5 +25,6 @@
     <dimen name="text_empat_puluh">40sp</dimen>
     <dimen name="empat_dua">42dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
 
 </resources>

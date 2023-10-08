@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kasirukk.databinding.RvCardUserBinding
 import com.example.kasirukk.feature.admin.user.viewmodel.AdminUserViewModel
-import com.ukk.User
+import com.ukk.data.User
 
 class AdminUserAdapter(private val listener: ClickListener, private val userViewModel: AdminUserViewModel): ListAdapter<User, AdminUserAdapter.ViewHolder>(
     PRODUCTS_COMPARATOR
@@ -47,7 +47,7 @@ class AdminUserAdapter(private val listener: ClickListener, private val userView
             binding.cardUserTvTitle.text = user?.name_user
             binding.cardUserTvDesc.text = user?.role
             binding.cardUserIvDelete.setOnClickListener {
-                listener.onDeleteItemClicked(user!!)
+                userViewModel.deleteUser(user!!.id_user)
             }
             binding.cardUserIvUpdate.setOnClickListener {
                 listener.onUpdateItemClicked(user!!)
@@ -67,7 +67,6 @@ class AdminUserAdapter(private val listener: ClickListener, private val userView
 
     interface ClickListener {
         fun onUpdateItemClicked(item: User)
-        fun onDeleteItemClicked(item: User)
     }
 
 }

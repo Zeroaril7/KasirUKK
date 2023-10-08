@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MenuTitle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/manager_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        />
+    <item
+        android:id="@+id/manager_report"
+        android:icon="@drawable/ic_transaction"
+        />
+</menu>

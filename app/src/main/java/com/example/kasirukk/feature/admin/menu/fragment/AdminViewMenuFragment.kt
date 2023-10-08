@@ -5,14 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.kasirukk.AdminActivity
+import com.example.kasirukk.feature.admin.AdminActivity
+import com.example.kasirukk.feature.login.USER
 import com.example.kasirukk.databinding.FragmentAdminViewMenuBinding
 import com.example.kasirukk.feature.admin.menu.adapter.AdminMenuMakananAdapter
 import com.example.kasirukk.feature.admin.menu.adapter.AdminMenuMinumanAdapter
 import com.example.kasirukk.feature.admin.menu.viewmodel.AdminMenuViewModel
-import com.ukk.Menu
+import com.ukk.data.Menu
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +26,7 @@ class AdminViewMenuFragment : Fragment(), AdminMenuMakananAdapter.ClickListener,
     private lateinit var menuMinumanAdapter: AdminMenuMinumanAdapter
     private var _binding: FragmentAdminViewMenuBinding? = null
     private val binding get() = _binding!!
-    private val viewModel by viewModels<AdminMenuViewModel>()
+    private val viewModel by activityViewModels<AdminMenuViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,10 +34,21 @@ class AdminViewMenuFragment : Fragment(), AdminMenuMakananAdapter.ClickListener,
     ): View {
         _binding = FragmentAdminViewMenuBinding.inflate(inflater, container, false)
 
-//        val setCurrentFragment = (activity as AdminActivity)
+        val setCurrentFragment = (activity as AdminActivity)
+
+        binding.fragmentAdminViewUserTvUser.text = "Welcome, $USER"
+
+        binding.logout.setOnClickListener {
+            setCurrentFragment.logout()
+        }
 
         initRvMakanan()
         initRvMinuman()
+
+        binding.fragmentAdminViewMenuFabAdd.setOnClickListener {
+            setCurrentFragment.setCurrentFragment(AdminAddMenuFragment())
+            onDestroyView()
+        }
 
         return binding.root
     }
@@ -72,26 +84,20 @@ class AdminViewMenuFragment : Fragment(), AdminMenuMakananAdapter.ClickListener,
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 
     override fun onUpdateMakananItemClicked(item: Menu) {
         val setCurrentFragment = (activity as AdminActivity)
-
-//        setCurrentFragment.setCurrentFragment()
+        setCurrentFragment.setCurrentFragment(AdminUpdateMenuFragment(item))
         onDestroyView()
-    }
-
-    override fun onDeleteMakananItemClicked(item: Menu) {
-        viewModel.deleteMenu(item.id_menu)
     }
 
     override fun onUpdateMinumanItemClicked(item: Menu) {
         val setCurrentFragment = (activity as AdminActivity)
-
-//      setCurrentFragment.setCurrentFragment()
+        setCurrentFragment.setCurrentFragment(AdminUpdateMenuFragment(item))
         onDestroyView()
-    }
-
-    override fun onDeleteMinumanItemClicked(item: Menu) {
-        viewModel.deleteMenu(item.id_menu)
     }
 }

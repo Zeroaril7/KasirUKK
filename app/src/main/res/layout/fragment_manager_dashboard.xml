@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/BaseUI"
+    tools:context=".feature.manager.dashboard.fragment.ManagerDashboardFragment">
+
+    <TextView
+        android:id="@+id/fragment_manager_dashboard_tv_user"
+        style="@style/TextSubHead"
+        android:text="Welcome, Budi"
+        android:textColor="@color/gray"
+        android:layout_marginTop="@dimen/tiga_dua"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_manager_dashboard_tv_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/management"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_enam_belas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_manager_dashboard_tv_user" />
+
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_logout"
+        android:layout_marginTop="@dimen/lima_enam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_manager_dashboard_tv"
+        style="@style/TextSubHead"
+        android:text="@string/dashboard"
+        android:textColor="@color/gray"
+        android:layout_marginTop="@dimen/dua_empat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_manager_dashboard_tv_role" />
+
+    <TextView
+        android:id="@+id/fragment_manager_dashboard_tv_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/enam_belas"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/favorite_menu"
+        android:textSize="@dimen/text_enam_belas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_manager_dashboard_tv" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/fragment_manager_dashboard_pie_chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="@dimen/enam_belas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_manager_dashboard_tv_fav" />
+</androidx.constraintlayout.widget.ConstraintLayout>

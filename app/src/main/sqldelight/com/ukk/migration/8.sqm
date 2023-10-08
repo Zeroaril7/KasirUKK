@@ -1,0 +1,19 @@
+import korlibs.time.DateTime;
+import kotlin.Boolean;
+
+DROP TABLE IF EXISTS transaksi;
+
+CREATE TABLE transaksi (
+    id_transaksi INTEGER NOT NULL PRIMARY KEY,
+    created_at INTEGER AS DateTime NOT NULL,
+    id_user INTEGER NOT NULL,
+    id_meja INTEGER NOT NULL UNIQUE,
+    bill INTEGER NOT NULL,
+    buyer_name TEXT NOT NULL,
+    note TEXT,
+    is_paid INTEGER AS Boolean NOT NULL DEFAULT 0,
+    FOREIGN KEY(id_user) REFERENCES user (id_user)
+    ON DELETE CASCADE,
+    FOREIGN KEY(id_meja) REFERENCES meja (id_meja)
+    ON DELETE CASCADE
+);

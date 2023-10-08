@@ -1,0 +1,17 @@
+import java.util.Date;
+import kotlin.Boolean;
+
+
+CREATE TABLE transaksi (
+    id_transaksi INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    date INTEGER AS Date NOT NULL ,
+    id_user INTEGER NOT NULL UNIQUE,
+    id_meja INTEGER NOT NULL UNIQUE,
+    buyer_name TEXT NOT NULL,
+    note TEXT,
+    isPaid INTEGER AS Boolean NOT NULL DEFAULT 0,
+    FOREIGN KEY(id_user) REFERENCES user (id_user)
+    ON DELETE CASCADE,
+    FOREIGN KEY(id_meja) REFERENCES meja (id_meja)
+    ON DELETE CASCADE
+);

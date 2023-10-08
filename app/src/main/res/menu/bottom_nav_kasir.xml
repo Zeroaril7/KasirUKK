@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MenuTitle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/kasir_transaction"
+        android:icon="@drawable/ic_transaction"
+        />
+    <item
+        android:id="@+id/kasir_history"
+        android:icon="@drawable/ic_history"
+        />
+</menu>

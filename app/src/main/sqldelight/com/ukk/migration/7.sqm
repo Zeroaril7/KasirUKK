@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS detail_transaksi;
+
+CREATE TABLE detail_transaksi (
+    id_transaksi INTEGER NOT NULL,
+    id_menu INTEGER NOT NULL UNIQUE,
+    amount INTEGER NOT NULL
+);

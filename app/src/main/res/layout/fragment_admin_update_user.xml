@@ -112,7 +112,7 @@
         android:layout_height="@dimen/lima_enam"
         android:layout_marginStart="@dimen/dua_empat"
         android:layout_marginEnd="@dimen/dua_empat"
-        android:layout_marginTop="@dimen/empat_delapan"
+        android:layout_marginTop="@dimen/tiga_dua"
         android:backgroundTint="@color/primary"
         android:text="@string/save"
         android:textColor="@color/white"

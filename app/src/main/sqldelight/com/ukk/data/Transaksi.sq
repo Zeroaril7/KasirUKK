@@ -1,0 +1,184 @@
+import korlibs.time.DateTime;
+import kotlin.Boolean;
+
+
+CREATE TABLE transaksi (
+    id_transaksi INTEGER NOT NULL PRIMARY KEY,
+    created_at INTEGER AS DateTime NOT NULL,
+    id_user INTEGER NOT NULL,
+    id_meja INTEGER NOT NULL,
+    buyer_name TEXT NOT NULL,
+    note TEXT,
+    is_paid INTEGER AS Boolean NOT NULL DEFAULT 0,
+    FOREIGN KEY(id_user) REFERENCES user (id_user)
+    ON DELETE CASCADE,
+    FOREIGN KEY(id_meja) REFERENCES meja (id_meja)
+    ON DELETE CASCADE
+);
+
+insertTransaction:
+INSERT INTO transaksi(
+id_transaksi,
+created_at,
+id_user,
+id_meja,
+buyer_name,
+note,
+is_paid
+) VALUES
+(?,?,?,?,?,?, ?)
+;
+
+getAllTransaction:
+SELECT * FROM
+transaksi
+;
+
+getAllReturn:
+SELECT
+SUM(d.price)
+FROM detail_transaksi d
+INNER JOIN transaksi t
+ON d.id_transaksi = t.id_transaksi
+;
+
+
+getOnGoingTransaction:
+SELECT * FROM
+transaksi WHERE
+is_paid = 0
+ORDER BY id_transaksi DESC
+;
+
+getCompleteTransaction:
+SELECT * FROM
+transaksi WHERE
+is_paid = 1
+ORDER BY id_transaksi DESC
+;
+
+getLastIdTransaction:
+SELECT id_transaksi FROM
+transaksi ORDER BY id_transaksi DESC LIMIT 1
+;
+
+getTransactionById:
+SELECT * FROM
+transaksi WHERE
+id_transaksi = :id_transaksi
+;
+
+updatePaidTransaction:
+UPDATE transaksi SET
+is_paid = :is_paid
+WHERE id_transaksi = :id_transaksi
+;
+
+updateNoteTransaction:
+UPDATE transaksi SET
+note = :note
+WHERE id_transaksi = :id_transaksi
+;
+
+getTrxByUser:
+SELECT
+t.created_at,
+t.buyer_name,
+t.is_paid,
+t.id_meja
+FROM transaksi t
+WHERE t.id_user = :id_user;
+
+getReturnByUser:
+SELECT
+SUM(d.price)
+FROM detail_transaksi d
+INNER JOIN transaksi t
+ON d.id_transaksi = t.id_transaksi
+WHERE t.id_user = :id_user
+;
+
+getTrxByDate:
+SELECT
+t.created_at,
+t.buyer_name,
+t.is_paid,
+t.id_meja
+FROM transaksi t
+WHERE t.created_at = :date
+;
+
+getReturnByDate:
+SELECT
+SUM(d.price)
+FROM detail_transaksi d
+INNER JOIN transaksi t
+ON d.id_transaksi = t.id_transaksi
+WHERE t.created_at = :date
+;
+
+getTrxByMonthly:
+SELECT
+t.created_at,
+t.buyer_name,
+t.is_paid,
+t.id_meja
+FROM transaksi t
+WHERE
+t.created_at BETWEEN :start_day AND :end_day
+;
+
+getReturnByMonthly:
+SELECT
+SUM(d.price)
+FROM detail_transaksi d
+INNER JOIN transaksi t
+ON d.id_transaksi = t.id_transaksi
+WHERE t.created_at BETWEEN :start_day AND :end_day
+;
+
+getTrxByUserAndDate:
+SELECT
+t.created_at,
+t.buyer_name,
+t.is_paid,
+t.id_meja
+FROM transaksi t
+WHERE t.id_user = :id_user
+AND t.created_at = :date
+;
+
+getReturnByUserAndDate:
+SELECT
+SUM(d.price)
+FROM detail_transaksi d
+INNER JOIN transaksi t
+ON d.id_transaksi = t.id_transaksi
+WHERE t.created_at = :date
+AND t.id_user = :id_user
+;
+
+getTrxByUserAndMonthly:
+SELECT
+t.created_at,
+t.buyer_name,
+t.is_paid,
+t.id_meja
+FROM transaksi t
+INNER JOIN detail_transaksi d
+WHERE t.id_user = :id_user
+AND t.created_at BETWEEN :start_day AND :end_day
+GROUP BY t.id_transaksi
+;
+
+getReturnByUserAndMonthly:
+SELECT
+SUM(d.price)
+FROM detail_transaksi d
+INNER JOIN transaksi t
+ON d.id_transaksi = t.id_transaksi
+WHERE t.id_user = :id_user
+AND t.created_at BETWEEN :start_day AND :end_day
+;
+
+

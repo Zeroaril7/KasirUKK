@@ -9,11 +9,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import com.example.kasirukk.AdminActivity
+import com.example.kasirukk.feature.admin.AdminActivity
 import com.example.kasirukk.R
 import com.example.kasirukk.databinding.FragmentAdminUpdateUserBinding
 import com.example.kasirukk.feature.admin.user.viewmodel.AdminUserViewModel
-import com.ukk.User
+import com.ukk.data.User
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -83,35 +83,38 @@ class AdminUpdateUserFragment(private val user : User) : Fragment() {
             val newUsername = username.text.toString()
             val newPassword = password.text.toString()
 
+
             when{
+
                 newName.isEmpty() -> alert()
+                newName == "" -> alert()
                 newUsername.isEmpty() -> alert()
-                newPassword.isEmpty() -> alert()
+                newUsername == "" -> alert()
+                newPassword == "" -> alert()
                 role == "Pilih" -> alert()
 
                 else -> {
                     viewModel.updateUser(id = user.id_user, name_user = newName, username = newUsername, password = newPassword, role = role)
                     setCurrentFragment.setCurrentFragment(AdminViewUserFragment())
-                    onDestroyView()
+                    onDestroy()
                 }
             }
         }
 
         binding.fragmentAdminUpdateUserIbBack.setOnClickListener {
             setCurrentFragment.setCurrentFragment(AdminViewUserFragment())
-            onDestroyView()
+            onDestroy()
         }
 
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDestroy() {
+        super.onDestroy()
         _binding = null
     }
 
     private fun alert(){
         Toast.makeText(requireContext(), "Enter The Right Value", Toast.LENGTH_SHORT).show()
     }
-
 }

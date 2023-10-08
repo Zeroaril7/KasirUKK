@@ -1,18 +1,18 @@
 package com.example.kasirukk.feature.admin.user.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.kasirukk.AdminActivity
+import com.example.kasirukk.feature.admin.AdminActivity
+import com.example.kasirukk.feature.login.USER
 import com.example.kasirukk.databinding.FragmentAdminViewUserBinding
 import com.example.kasirukk.feature.admin.user.adapter.AdminUserAdapter
 import com.example.kasirukk.feature.admin.user.viewmodel.AdminUserViewModel
-import com.ukk.User
+import com.ukk.data.User
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +25,7 @@ class AdminViewUserFragment : Fragment(), AdminUserAdapter.ClickListener {
     private var _binding: FragmentAdminViewUserBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel by viewModels<AdminUserViewModel>()
+    private val viewModel by activityViewModels<AdminUserViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +37,12 @@ class AdminViewUserFragment : Fragment(), AdminUserAdapter.ClickListener {
 
         initRv()
 
+        binding.fragmentAdminViewUserTvUser.text = "Welcome, $USER"
+
+        binding.logout.setOnClickListener {
+            setCurrentFragment.logout()
+        }
+
         binding.fragmentAdminViewUserFabAdd.setOnClickListener {
             setCurrentFragment.setCurrentFragment(AdminAddUserFragment())
         }
@@ -44,8 +50,8 @@ class AdminViewUserFragment : Fragment(), AdminUserAdapter.ClickListener {
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDestroy() {
+        super.onDestroy()
         _binding = null
     }
 
@@ -68,11 +74,5 @@ class AdminViewUserFragment : Fragment(), AdminUserAdapter.ClickListener {
         val setCurrentFragment = (activity as AdminActivity)
         setCurrentFragment.setCurrentFragment(AdminUpdateUserFragment(item))
         onDestroyView()
-    }
-
-    override fun onDeleteItemClicked(item: User) {
-        Log.d("onDelete", "Is Clicked")
-        Log.d("onDelete Id_User", item.id_user.toString())
-        viewModel.deleteUser(item.id_user)
     }
 }

@@ -6,6 +6,14 @@
     <color name="unchecked">#655D51</color>
     <color name="background">#FFF8ED</color>
     <color name="gray">#313131</color>
-    <color name="primary">#F2A126</color>
-    <color name="secondary">#DF6700</color>
+    <color name="gray_bg">#E6E6E6</color>
+    <color name="gray_text">#5C5A5A</color>
+    <color name="primary">#C5831F</color>
+    <color name="primaryDark">#C5831F</color>
+    <color name="secondary">#88580F</color>
+    <color name="progress_bg">#FFE98F</color>
+    <color name="progress_text">#AB711A</color>
+    <color name="complete_bg">#D3FFA7</color>
+    <color name="complete_text">#60A020</color>
+
 </resources>

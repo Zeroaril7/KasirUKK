@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:id="@+id/fragment_cashier_add_transaction_sv_page"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/enam_belas"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/enam_belas"
+    tools:context=".feature.cashier.transaction.fragment.CashierAddTransactionFragment">
+
+    <ImageButton
+        android:id="@+id/fragment_cashier_add_transaction_ib_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_back"
+        android:backgroundTint="@color/secondary"
+        android:layout_marginTop="@dimen/empat_dua"
+        android:layout_marginStart="@dimen/dua_empat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/fragment_cashier_add_transaction_tv_title"
+        style="@style/TextFormTitle"
+        android:text="@string/add_order"
+        android:layout_marginTop="@dimen/empat_puluh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/fragment_cashier_add_transaction_tv_name"
+        style="@style/TextForm"
+        android:layout_marginTop="@dimen/empat_delapan"
+        android:text="@string/nama_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_ib_back" />
+
+    <EditText
+        android:id="@+id/fragment_cashier_add_transaction_et_name"
+        style="@style/TextFormInput"
+        android:inputType="text"
+        android:autofillHints=""
+        tools:imeOptions="actionNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_tv_name"
+        />
+
+    <TextView
+        android:id="@+id/fragment_cashier_add_transaction_tv_table"
+        style="@style/TextForm"
+        android:text="@string/table"
+        android:layout_marginTop="@dimen/enam_belas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_et_name" />
+
+    <Spinner
+        android:id="@+id/fragment_cashier_add_transaction_sp_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/delapan"
+        android:layout_marginStart="@dimen/dua_empat"
+        android:layout_marginEnd="@dimen/dua_empat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_tv_table" />
+
+    <TextView
+        android:id="@+id/fragment_cashier_add_transaction_tv_note"
+        style="@style/TextForm"
+        android:layout_marginTop="@dimen/dua_empat"
+        android:text="@string/note"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_sp_table" />
+
+    <EditText
+        android:id="@+id/fragment_cashier_add_transaction_et_note"
+        style="@style/TextFormInput"
+        android:inputType="text"
+        android:autofillHints=""
+        tools:imeOptions="actionDone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_tv_note"
+        />
+
+    <TextView
+        android:id="@+id/fragment_cashier_add_transaction_tv_makanan"
+        style="@style/TextSubHead"
+        android:layout_marginTop="@dimen/dua_empat"
+        android:layout_marginStart="@dimen/dua_empat"
+        android:text="@string/makanan"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_et_note" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragment_cashier_add_transaction_sv_makanan"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_tv_makanan">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_cashier_add_transaction_rv_makanan"
+            style="@style/BaseUI"
+            android:layout_marginTop="@dimen/delapan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/rv_card_menu"
+            tools:imeOptions="actionNone"
+            />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/fragment_cashier_add_transaction_tv_minuman"
+        style="@style/TextSubHead"
+        android:text="@string/minuman"
+        android:textColor="@color/gray"
+        android:layout_marginTop="@dimen/dua_empat"
+        android:layout_marginStart="@dimen/dua_empat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_sv_makanan"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragment_cashier_add_transaction_sv_minuman"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_tv_minuman">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_cashier_add_transaction_rv_minuman"
+            style="@style/BaseUI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/delapan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/rv_card_menu"
+            tools:imeOptions="actionNone"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fragment_cashier_add_transaction_btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lima_enam"
+        android:layout_marginStart="@dimen/dua_empat"
+        android:layout_marginEnd="@dimen/dua_empat"
+        android:layout_marginTop="@dimen/tiga_dua"
+        android:backgroundTint="@color/primary"
+        android:text="@string/order"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_cashier_add_transaction_sv_minuman" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

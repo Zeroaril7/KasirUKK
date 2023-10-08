@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".app.KasirApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,22 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KasirUKK"
-        android:name=".KasirApp"
         tools:targetApi="31">
         <activity
-            android:name=".AdminActivity"
-            android:exported="true">
-
+            android:name=".feature.manager.ManagerActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".feature.cashier.KasirActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".feature.admin.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.login.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
-
         </activity>
     </application>
 

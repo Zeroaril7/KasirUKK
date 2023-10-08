@@ -1,0 +1,47 @@
+import kotlin.Boolean;
+
+CREATE TABLE meja (
+    id_meja INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    number INTEGER NOT NULL,
+    is_used INTEGER AS Boolean DEFAULT 0 NOT NULL
+);
+
+getAllMeja:
+SELECT * FROM
+meja
+;
+
+getFreeMeja:
+SELECT * FROM
+meja WHERE is_used = 0
+;
+
+getMejaById:
+SELECT * FROM
+meja WHERE
+id_meja = :id_meja
+;
+
+getMejaByNumber:
+SELECT * FROM
+meja WHERE
+number = :number
+;
+
+insertMeja:
+INSERT INTO meja
+(number) VALUES (?)
+;
+
+updateMeja:
+UPDATE meja
+SET
+number = :number,
+is_used = :is_used
+WHERE id_meja = :id_meja
+;
+
+deleteMeja:
+DELETE FROM meja
+WHERE id_meja = :id_meja
+;
