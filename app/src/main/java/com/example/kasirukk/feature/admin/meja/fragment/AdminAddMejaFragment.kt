@@ -34,9 +34,11 @@ class AdminAddMejaFragment : Fragment() {
         }
         binding.fragmentAdminAddMejaBtnSave.setOnClickListener {
             val number = binding.fragmentAdminAddMejaEtNumber.text.toString()
-            val nomor = number.toLong()
+            var nomor : Long = 0
 
-
+            if (number.isNotEmpty()){
+                nomor = number.toLong()
+            }
             when{
                 number.isEmpty() -> alert()
                 number == "" -> alert()

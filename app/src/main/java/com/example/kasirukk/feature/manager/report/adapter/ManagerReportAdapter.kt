@@ -1,6 +1,7 @@
 package com.example.kasirukk.feature.manager.report.adapter
 
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -36,8 +37,9 @@ class ManagerReportAdapter(private val mejaViewModel: AdminMejaViewModel) : List
             val offset = transaksi?.created_at?.localOffset
             val parseDate = DateTimeTz.utc(transaksi!!.created_at, offset!!).format("dd/MM/yyyy")
             val getNumberTable =  mejaViewModel.getMejaById(transaksi.id_meja)
-
+            Log.d("is_paid first", transaksi.is_paid.toString())
             if(transaksi.is_paid){
+                Log.d("is_paid second", transaksi.is_paid.toString())
                 binding.cardTransactionIvStatusBg.setBackgroundResource(R.drawable.card_background_complete)
                 binding.cardTransactionTvStatus.text = "Complete"
                 binding.cardTransactionTvStatus.setTextColor(Color.parseColor("#60A020"))

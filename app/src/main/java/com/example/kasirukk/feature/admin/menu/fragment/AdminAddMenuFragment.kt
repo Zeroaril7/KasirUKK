@@ -61,7 +61,11 @@ class AdminAddMenuFragment : Fragment() {
             val name = binding.fragmentAdminAddMenuEtName.text.toString()
             val description = binding.fragmentAdminAddMenuEtDesc.text.toString()
             val price = binding.fragmentAdminAddMenuEtHarga.text.toString()
-            val harga = price.toLong()
+            var harga : Long = 0
+
+            if (price.isNotEmpty()){
+                harga = price.toLong()
+            }
 
             when{
 

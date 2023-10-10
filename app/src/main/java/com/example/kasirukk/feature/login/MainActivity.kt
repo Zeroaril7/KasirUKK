@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.activityMainBtnLogin.setOnClickListener {
-            isValid()
 
             if(isValid()){
                 val username = binding.activityMainUsername.text.toString()

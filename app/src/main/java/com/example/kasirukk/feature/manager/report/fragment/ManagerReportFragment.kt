@@ -376,22 +376,4 @@ class ManagerReportFragment : Fragment() {
         }
 
     }
-
-//    private fun initNewRv(user: String?, date: DateTime?, startDay: DateTime?, endDay: DateTime?) {
-//        filterModel.clear()
-//
-//        val userData: User? = userViewModel.getUserByNameUser(user!!)
-//
-//        reportAdapter = ManagerReportAdapter(mejaViewModel)
-//        val rvReport = binding.fragmentManagerReportRv
-//        rvReport.setHasFixedSize(true)
-//        rvReport.layoutManager = LinearLayoutManager(requireContext())
-//        rvReport.adapter = reportAdapter
-//
-//        CoroutineScope(Dispatchers.Main).launch {
-//            if (userData != null && startDay != null && endDay != null){
-//
-//            }
-//        }
-//    }
 }

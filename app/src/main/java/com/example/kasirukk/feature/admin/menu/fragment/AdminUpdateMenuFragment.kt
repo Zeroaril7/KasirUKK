@@ -46,7 +46,12 @@ class AdminUpdateMenuFragment(private val menu: Menu) : Fragment() {
             val newName = name.text.toString()
             val newDescription = description.text.toString()
             val newPrice = price.text.toString()
-            val harga = newPrice.toLong()
+
+            var harga : Long = 0
+
+            if (newPrice.isNotEmpty()){
+                harga = newPrice.toLong()
+            }
 
             when{
                 newName.isEmpty() -> alert()

@@ -13,6 +13,12 @@
     <dimen name="lima_enam">56dp</dimen>
     <dimen name="enam_empat">64dp</dimen>
     <dimen name="tuju_dua">72dp</dimen>
+    <dimen name="delapan_puluh">80dp</dimen>
+    <dimen name="delapan_delapan">88dp</dimen>
+    <dimen name="sembilan_enam">96dp</dimen>
+    <dimen name="seratus_empat">104dp</dimen>
+    <dimen name="tiga_ratus">300dp</dimen>
+
 
 
     <dimen name="text_delapan">8sp</dimen>

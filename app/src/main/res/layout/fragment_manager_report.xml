@@ -192,7 +192,7 @@
     <ScrollView
         android:id="@+id/fragment_manager_report_sv_rv"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="400dp"
         android:layout_marginTop="@dimen/dua_puluh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -204,7 +204,7 @@
             style="@style/BaseUI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/delapan"
+            android:layout_marginBottom="@dimen/delapan"
             tools:listitem="@layout/rv_card_transaction" />
     </ScrollView>
 
