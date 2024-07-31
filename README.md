@@ -19,16 +19,4 @@ Analytics: View charts for favorite menu items.
 Transaction history: Access and filter transaction history.
 Financial overview: Analyze profit and loss.
 
-<h2>Image:</h2>
-<h3>Management (Dashboard)</h3>
-![image](https://github.com/user-attachments/assets/3dc8730d-3ba8-44e7-8192-2ce95cf82539)
-
-
-<h3>Kasir (On Going Order)</h3>
-![image](https://github.com/user-attachments/assets/06e0763f-6454-4342-89cb-623fd0ec6e8a)
-
-
-<h3>Admin (Data User)</h3>
-![image](https://github.com/user-attachments/assets/6dcb713b-d615-4dbd-a5eb-8648c7196ce8)
-
 
