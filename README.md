@@ -21,14 +21,14 @@ Financial overview: Analyze profit and loss.
 
 <h2>Image:</h2>
 <h3>Management (Dashboard)</h3>
-![273420568-af438b99-e031-4e57-8f19-4239f5bf90da](https://github.com/user-attachments/assets/3dc8730d-3ba8-44e7-8192-2ce95cf82539)
+![image](https://github.com/user-attachments/assets/3dc8730d-3ba8-44e7-8192-2ce95cf82539)
 
 
 <h3>Kasir (On Going Order)</h3>
-![273420602-17a7b262-8de4-41f2-9184-2ec4a9c313ea](https://github.com/user-attachments/assets/06e0763f-6454-4342-89cb-623fd0ec6e8a)
+![image](https://github.com/user-attachments/assets/06e0763f-6454-4342-89cb-623fd0ec6e8a)
 
 
 <h3>Admin (Data User)</h3>
-![273420625-f90d4371-5863-4340-ba19-4111ef438e66](https://github.com/user-attachments/assets/6dcb713b-d615-4dbd-a5eb-8648c7196ce8)
+![image](https://github.com/user-attachments/assets/6dcb713b-d615-4dbd-a5eb-8648c7196ce8)
 
 
