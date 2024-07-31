@@ -18,7 +18,7 @@ Transaction history: Manage and review transaction history.
 Analytics: View charts for favorite menu items.
 Transaction history: Access and filter transaction history.
 Financial overview: Analyze profit and loss.
-
+<hr>
 <b>Management (Dashboard)</b><hr>
 ![image](https://github.com/Zeroaril7/KasirUKK/assets/90768772/af438b99-e031-4e57-8f19-4239f5bf90da)
 
