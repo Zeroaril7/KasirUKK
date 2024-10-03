@@ -4,19 +4,19 @@ The Kasir UKK application is designed for restaurant management, offering distin
 <h2>Features:</h2>
 <h3>Admin Role:</h3>
 
--Manage users: Add, delete, and update user profiles.
--Menu management: Add, delete, and update menu items.
--Table management: Add, delete, and update table information.
+a. Manage users: Add, delete, and update user profiles. <br>
+b. Menu management: Add, delete, and update menu items. <br>
+c. Table management: Add, delete, and update table information. 
 
 <h3>Cashier Role:</h3>
 
--Transactions: Add and update transactions.
--Transaction history: Manage and review transaction history.
+a. Transactions: Add and update transactions.<br>
+b. Transaction history: Manage and review transaction history.
 
 <h3>Management Role:</h3>
 
--Analytics: View charts for favorite menu items.
--Transaction history: Access and filter transaction history.
--Financial overview: Analyze profit and loss.
+a. Analytics: View charts for favorite menu items.<br>
+b. Transaction history: Access and filter transaction history.<br>
+c. Financial overview: Analyze profit and loss.
 
 
